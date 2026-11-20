@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
-import { ArrowDown, Terminal, ShieldCheck, ExternalLink, ArrowUpRight, User } from 'lucide-react'
+import React from 'react'
+import { ArrowDown, Terminal, ShieldCheck, ExternalLink, ArrowUpRight } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '../ui/Icons'
+import { HalftoneReveal } from '../ui/HalftoneReveal'
+import { useTheme } from '../../context/useTheme'
 
 export const HeroSection: React.FC = () => {
-  const [imageError, setImageError] = useState(false)
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
 
   return (
     <section
@@ -106,41 +109,34 @@ export const HeroSection: React.FC = () => {
                 }}
               />
 
-              {/* Cutout Image Frame */}
-              <div className="relative rounded-xl overflow-hidden bg-[var(--bg-card)] aspect-square flex flex-col items-center justify-center border border-[var(--border-color)]">
-                {!imageError ? (
-                  <img
-                    src="/profile-cutout.png"
-                    alt="Mohamed Afraz Ali - Profile Cutout"
-                    className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    onError={() => setImageError(true)}
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center p-6 text-center space-y-3">
-                    <div className="w-20 h-20 rounded-full border-2 border-[var(--accent)]/40 bg-[var(--bg-surface)] flex items-center justify-center shadow-lg">
-                      <User className="w-10 h-10 text-[var(--accent)]" />
-                    </div>
-                    <div>
-                      <span className="text-xs font-mono font-bold tracking-wider text-[var(--text-primary)] block">
-                        AFRAZ ALI
-                      </span>
-                      <span className="text-[11px] font-mono text-[var(--accent)] block mt-0.5">
-                        SEC_ID: 290 // ACTIVE
-                      </span>
-                    </div>
-                    <p className="text-[10px] font-mono text-[var(--text-secondary)] border border-dashed border-[var(--border-color)] px-2.5 py-1.5 rounded bg-[var(--bg-surface)]">
-                      Drop profile-cutout.png in public/
-                    </p>
-                  </div>
-                )}
+              {/* Cutout Image Frame with HalftoneReveal */}
+              <div className="relative rounded-xl overflow-hidden bg-[var(--bg-card)] aspect-square w-full flex flex-col items-center justify-center border border-[var(--border-color)]">
+                <HalftoneReveal
+                  src="/profile-cutout.png"
+                  fit="cover"
+                  mode="duotone"
+                  shape="dot"
+                  cellSize={5}
+                  angle={45}
+                  dotScale={1.05}
+                  inkColor={isDark ? '#D5F5C6' : '#18251B'}
+                  accentColor={isDark ? '#4ADE80' : '#2E5A36'}
+                  paperColor={isDark ? '#080909' : '#F5F7F6'}
+                  revealRadius={120}
+                  softness={0.5}
+                  linger={1.5}
+                  wander={true}
+                  clickBurst={true}
+                  className="w-full h-full cursor-crosshair"
+                />
 
                 {/* Subtitle Tech Tag on Bottom */}
-                <div className="absolute bottom-2 left-2 right-2 px-3 py-1.5 rounded-lg bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[var(--border-color)] flex items-center justify-between text-[10px] font-mono">
+                <div className="absolute bottom-2 left-2 right-2 px-3 py-1.5 rounded-lg bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[var(--border-color)] flex items-center justify-between text-[10px] font-mono pointer-events-none z-10">
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
                     <span className="text-[var(--text-primary)] font-medium">AFRAZ ALI</span>
                   </div>
-                  <span className="text-[var(--accent)]">DEFENSE &middot; RECON</span>
+                  <span className="text-[var(--accent)] font-semibold">HOVER TO REVEAL</span>
                 </div>
               </div>
             </div>
