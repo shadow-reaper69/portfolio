@@ -26,8 +26,8 @@ export const EducationSection: React.FC = () => {
               </p>
             </div>
 
-            <p className="text-xs sm:text-sm text-[var(--text-secondary)] font-sans leading-relaxed">
-              Hindustan Institute of Technology &amp; Science, Chennai, Tamil Nadu. Focus on foundational computer systems, networking architecture, cryptography, and application security.
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] font-sans">
+              Hindustan Institute of Technology &amp; Science, Chennai, Tamil Nadu.
             </p>
 
             {/* Internship Availability placed here as requested */}
@@ -58,10 +58,6 @@ export const EducationSection: React.FC = () => {
                   CyberWarFare Labs &middot; Hands-on defense and threat assessment
                 </p>
               </div>
-
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] font-sans leading-relaxed">
-                Practical assessment curriculum focusing on incident analysis, threat identification, and hands-on defense methodologies.
-              </p>
             </div>
 
             <div className="pt-3 border-t border-[var(--border-color)] flex items-center justify-between gap-2">
