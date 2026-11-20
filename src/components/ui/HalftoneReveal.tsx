@@ -68,6 +68,7 @@ uniform float uReverse;
 uniform float uIntro;
 uniform vec4 uBursts[4];
 uniform float uBurstWidth;
+uniform float uTransparent;
 out vec4 outColor;
 
 const vec3 LUMA = vec3(0.2126, 0.7152, 0.0722);
@@ -283,7 +284,8 @@ void main() {
   float k = smoothstep(r + w, r - w, d) * clamp(r / (w * 2.0), 0.0, 1.0);
   vec4 sharp = photo(p, 0.0, 0.0);
   vec3 real = mix(uPaper, sharp.rgb, sharp.a);
-  outColor = vec4(mix(print, real, k), 1.0);
+  float alpha = mix(1.0, sharp.a, uTransparent);
+  outColor = vec4(mix(print, real, k), alpha);
 }`;
 
 const MODES: Record<string, number> = { mono: 0, duotone: 1, color: 2 };
@@ -385,6 +387,8 @@ export interface HalftoneRevealProps {
   wander?: boolean;
   clickBurst?: boolean;
   intro?: boolean;
+  transparent?: boolean;
+  imageScale?: number;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -419,6 +423,8 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
   wander = false,
   clickBurst = true,
   intro = true,
+  transparent = false,
+  imageScale = 1,
   className = '',
   style
 }) => {
@@ -446,7 +452,9 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
     reverse,
     wander,
     clickBurst,
-    intro
+    intro,
+    transparent: Boolean(transparent),
+    imageScale: imageScale && imageScale > 0 ? imageScale : 1
   };
   const settingsRef = useRef(settings);
   useEffect(() => {
@@ -457,7 +465,7 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
     const container = containerRef.current;
     const canvas = canvasRef.current;
     const gl = canvas?.getContext('webgl2', {
-      alpha: false,
+      alpha: true,
       antialias: false,
       depth: false,
       stencil: false,
@@ -505,7 +513,8 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
       'uReverse',
       'uIntro',
       'uBursts',
-      'uBurstWidth'
+      'uBurstWidth',
+      'uTransparent'
     ]);
 
     const vao = gl.createVertexArray();
@@ -591,7 +600,8 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
     const frameRect = (s: typeof settings): [number, number, number, number] => {
       const { image, width, height } = state;
       if (!image) return [0, 0, width, height];
-      const scale = (s.fit === 'cover' ? Math.max : Math.min)(width / image.naturalWidth, height / image.naturalHeight);
+      const baseScale = (s.fit === 'cover' ? Math.max : Math.min)(width / image.naturalWidth, height / image.naturalHeight);
+      const scale = baseScale * s.imageScale;
       const w = image.naturalWidth * scale;
       const h = image.naturalHeight * scale;
       return [(width - w) / 2, (height - h) / 2, w, h];
@@ -687,6 +697,13 @@ export const HalftoneReveal: React.FC<HalftoneRevealProps> = ({
       gl.uniform1f(viewUniforms.uIntro, 1 - (1 - intro) * (1 - intro));
       gl.uniform4fv(viewUniforms.uBursts, burstData);
       gl.uniform1f(viewUniforms.uBurstWidth, Math.max(60, s.revealRadius * 0.9));
+      gl.uniform1f(viewUniforms.uTransparent, s.transparent ? 1 : 0);
+      if (s.transparent) {
+        gl.clearColor(0, 0, 0, 0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+      }
       gl.bindVertexArray(vao);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       gl.bindVertexArray(null);

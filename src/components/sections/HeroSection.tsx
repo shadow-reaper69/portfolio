@@ -7,17 +7,16 @@ import { useTheme } from '../../context/useTheme'
 export const HeroSection: React.FC = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
-
   return (
     <section
       id="hero"
       aria-label="Introduction"
       className="relative flex flex-col justify-center pt-20 pb-16 overflow-hidden"
     >
-      <div className="relative z-10 max-w-5xl mx-auto px-6 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Essential details & Quick Actions (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          {/* Left Column: Essential details & Quick Actions (6 cols) */}
+          <div className="lg:col-span-6 space-y-6">
             {/* At most two chips */}
             <div className="flex flex-wrap items-center gap-2.5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] text-xs font-sans text-[var(--text-secondary)]">
@@ -98,22 +97,23 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Visual Photo Cutout Showcase (5 cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-xs sm:max-w-sm rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md p-4 shadow-xl overflow-hidden group">
-              {/* Ambient Cyber Backlight */}
+          {/* Right Column: Large Frameless Cutout with HalftoneReveal (6 cols) */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end items-end relative">
+            <div className="relative w-full max-w-[440px] sm:max-w-[500px] lg:max-w-[580px] xl:max-w-[640px] h-[440px] sm:h-[500px] lg:h-[560px] xl:h-[620px] flex items-center justify-center">
+              {/* Soft Ambient Cyber Backlight Aura */}
               <div
-                className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity"
+                className="absolute inset-0 -z-10 pointer-events-none opacity-30 dark:opacity-45 blur-3xl scale-100"
                 style={{
-                  background: 'radial-gradient(circle at 50% 40%, var(--accent), transparent 70%)'
+                  background: 'radial-gradient(circle at 50% 50%, var(--accent) 0%, transparent 70%)'
                 }}
               />
 
-              {/* Cutout Image Frame with HalftoneReveal */}
-              <div className="relative rounded-xl overflow-hidden bg-[var(--bg-card)] aspect-square w-full flex flex-col items-center justify-center border border-[var(--border-color)]">
+              {/* Pure Frameless HalftoneReveal on Cutout with Smooth Bottom Dissolve */}
+              <div className="relative w-full h-full [mask-image:linear-gradient(to_bottom,black_86%,transparent_100%)]">
                 <HalftoneReveal
                   src="/profile-cutout.png"
                   fit="cover"
+                  imageScale={1.22}
                   mode="duotone"
                   shape="dot"
                   cellSize={5}
@@ -122,22 +122,14 @@ export const HeroSection: React.FC = () => {
                   inkColor={isDark ? '#D5F5C6' : '#18251B'}
                   accentColor={isDark ? '#4ADE80' : '#2E5A36'}
                   paperColor={isDark ? '#080909' : '#F5F7F6'}
-                  revealRadius={120}
+                  revealRadius={150}
                   softness={0.5}
                   linger={1.5}
                   wander={true}
                   clickBurst={true}
+                  transparent={true}
                   className="w-full h-full cursor-crosshair"
                 />
-
-                {/* Subtitle Tech Tag on Bottom */}
-                <div className="absolute bottom-2 left-2 right-2 px-3 py-1.5 rounded-lg bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[var(--border-color)] flex items-center justify-between text-[10px] font-mono pointer-events-none z-10">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
-                    <span className="text-[var(--text-primary)] font-medium">AFRAZ ALI</span>
-                  </div>
-                  <span className="text-[var(--accent)] font-semibold">HOVER TO REVEAL</span>
-                </div>
               </div>
             </div>
           </div>
