@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-delta-self-32.vercel.app/sitemap.xml

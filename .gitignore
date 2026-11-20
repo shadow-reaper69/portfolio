@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Private AI coding context
+PROJECT_CONTEXT.md
