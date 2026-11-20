@@ -1,5 +1,6 @@
 import React from 'react'
-import { ArrowDown, Terminal, ShieldCheck, ExternalLink } from 'lucide-react'
+import { ArrowDown, Terminal, ShieldCheck, ExternalLink, ArrowUpRight } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '../ui/Icons'
 
 export const HeroSection: React.FC = () => {
   return (
@@ -48,7 +49,7 @@ export const HeroSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Exactly Two Action Buttons */}
+        {/* Primary Action Buttons & Highlighted Social Redirects */}
         <div className="flex flex-wrap items-center gap-3">
           <a
             href="#projects"
@@ -64,6 +65,32 @@ export const HeroSection: React.FC = () => {
           >
             <span>Web Security Practice</span>
             <Terminal className="w-3.5 h-3.5 text-[#D5F5C6]" />
+          </a>
+
+          {/* Prominently Highlighted GitHub Redirect */}
+          <a
+            href="https://github.com/shadow-reaper69/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-white/15 bg-[#141716] hover:border-[#D5F5C6] hover:bg-white/5 text-[#F5F5F5] hover:text-[#D5F5C6] text-xs font-mono font-medium transition-all group shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5F5C6]"
+            aria-label="GitHub Profile (opens in new tab)"
+          >
+            <GithubIcon className="w-4 h-4 text-[#D5F5C6]" />
+            <span>GitHub</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#D5F5C6]" />
+          </a>
+
+          {/* Prominently Highlighted LinkedIn Redirect */}
+          <a
+            href="https://www.linkedin.com/in/afraz-ali-1085a1372/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-white/15 bg-[#141716] hover:border-[#D5F5C6] hover:bg-white/5 text-[#F5F5F5] hover:text-[#D5F5C6] text-xs font-mono font-medium transition-all group shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5F5C6]"
+            aria-label="LinkedIn Profile (opens in new tab)"
+          >
+            <LinkedinIcon className="w-4 h-4 text-[#D5F5C6]" />
+            <span>LinkedIn</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#D5F5C6]" />
           </a>
         </div>
       </div>

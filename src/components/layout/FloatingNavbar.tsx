@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ArrowUpRight, Menu, X, FileText } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '../ui/Icons'
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -57,8 +58,8 @@ export const FloatingNavbar: React.FC = () => {
           Mohamed Afraz Ali
         </a>
 
-        {/* Desktop Nav Links & Resume on the right */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop Nav Links & Social Redirects on the right */}
+        <div className="hidden md:flex items-center gap-5">
           <nav className="flex items-center gap-1 font-sans text-xs text-[#8E9592]" aria-label="Main Navigation">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href.substring(1)
@@ -78,6 +79,31 @@ export const FloatingNavbar: React.FC = () => {
             })}
           </nav>
 
+          {/* Highlighted GitHub & LinkedIn Redirects */}
+          <div className="flex items-center gap-2 pl-2 border-l border-white/10">
+            <a
+              href="https://github.com/shadow-reaper69/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-md border border-white/10 bg-[#0E1010] text-[#8E9592] hover:text-[#D5F5C6] hover:border-[#D5F5C6]/40 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D5F5C6]"
+              title="GitHub Profile"
+              aria-label="GitHub Profile (opens in new tab)"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/afraz-ali-1085a1372/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-md border border-white/10 bg-[#0E1010] text-[#8E9592] hover:text-[#D5F5C6] hover:border-[#D5F5C6]/40 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D5F5C6]"
+              title="LinkedIn Profile"
+              aria-label="LinkedIn Profile (opens in new tab)"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+            </a>
+          </div>
+
           <a
             href="/resume.pdf"
             target="_blank"
@@ -90,8 +116,26 @@ export const FloatingNavbar: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger & Quick Socials */}
         <div className="flex md:hidden items-center gap-2">
+          <a
+            href="https://github.com/shadow-reaper69/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded border border-white/10 bg-[#0E1010] text-[#8E9592] hover:text-[#D5F5C6]"
+            aria-label="GitHub"
+          >
+            <GithubIcon className="w-3.5 h-3.5" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/afraz-ali-1085a1372/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded border border-white/10 bg-[#0E1010] text-[#8E9592] hover:text-[#D5F5C6]"
+            aria-label="LinkedIn"
+          >
+            <LinkedinIcon className="w-3.5 h-3.5" />
+          </a>
           <a
             href="/resume.pdf"
             target="_blank"
@@ -125,6 +169,26 @@ export const FloatingNavbar: React.FC = () => {
               {link.label}
             </a>
           ))}
+          <div className="pt-2 border-t border-white/10 flex items-center gap-3">
+            <a
+              href="https://github.com/shadow-reaper69/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono text-[#D5F5C6] hover:underline flex items-center gap-1"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/afraz-ali-1085a1372/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-mono text-[#D5F5C6] hover:underline flex items-center gap-1"
+            >
+              <LinkedinIcon className="w-3.5 h-3.5" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
       )}
     </header>
