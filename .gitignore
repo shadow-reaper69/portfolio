@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Antigravity project context
+PROJECT_CONTEXT.md
+prompt_extracted.txt

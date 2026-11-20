@@ -1,98 +1,93 @@
 import React from 'react'
-import { ArrowDown, ArrowUpRight } from 'lucide-react'
-import { portfolioData } from '../../data/portfolioData'
-import { AnimatedContent } from '../ui/AnimatedContent'
-import { InteractiveTerminal } from '../terminal/InteractiveTerminal'
-import { DecryptedText } from '../ui/DecryptedText'
-import { MagneticButton } from '../ui/MagneticButton'
+import { ArrowDown, ArrowUpRight, ShieldCheck, Terminal, Award, ExternalLink, FileText } from 'lucide-react'
 
 export const HeroSection: React.FC = () => {
-  const { name, headline, subheadline } = portfolioData.personal
-
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex flex-col justify-center pt-28 pb-16 overflow-hidden bg-transparent"
+      aria-label="Introduction"
+      className="relative min-h-[85vh] flex flex-col justify-center pt-32 pb-20 bg-[#F3F4F5]"
     >
-      {/* Background Ambient Radial Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-[#D5F5C6]/5 blur-[130px] rounded-full pointer-events-none" />
+      <div className="max-w-5xl mx-auto px-6 w-full">
+        {/* Top Badges / Chips */}
+        <div className="flex flex-wrap items-center gap-2.5 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D5DADF] bg-[#FFFFFF] text-xs font-sans text-[#46505B] shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+            <span className="font-medium text-[#0F1419]">B.Tech CSE — Cybersecurity (2nd Year)</span>
+          </div>
 
-      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pointer-events-none">
-        {/* Left Column: Typographic Presence with AnimatedContent */}
-        <div className="lg:col-span-7 pointer-events-auto">
-          <AnimatedContent
-            distance={30}
-            direction="vertical"
-            duration={0.7}
-            ease="power2.out"
-            trigger="mount"
-            stagger={0.07}
-            className="space-y-6"
+          <a
+            href="https://tryhackme.com/p/afrazali290"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#D5DADF] bg-[#FFFFFF] hover:border-[#1D4ED8] text-xs font-sans text-[#46505B] hover:text-[#1D4ED8] transition-colors shadow-2xs group"
           >
-            {/* Availability Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-[#0E1010]/80 backdrop-blur-md text-xs font-mono text-[#8E9592]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D5F5C6] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D5F5C6]"></span>
-              </span>
-              <span className="text-[#D5F5C6] font-medium">B.Tech CSE Cybersecurity Undergrad</span>
-            </div>
+            <ShieldCheck className="w-3.5 h-3.5 text-[#1D4ED8]" />
+            <span>TryHackMe Top 25%</span>
+            <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+          </a>
 
-            {/* Name & Headline */}
-            <div className="space-y-3">
-              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-display font-bold tracking-tight text-[#F5F5F5] leading-tight">
-                <DecryptedText text={name} speed={30} maxIterations={8} />
-              </h1>
-              <p className="text-xl sm:text-2xl font-display font-medium text-[#D5F5C6] tracking-tight">
-                {headline}
-              </p>
-            </div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#D5DADF] bg-[#FFFFFF] text-xs font-sans text-[#46505B] shadow-2xs">
+            <Award className="w-3.5 h-3.5 text-[#1D4ED8]" />
+            <span>15 PortSwigger Labs</span>
+          </div>
 
-            {/* Positioning Description */}
-            <p className="text-sm sm:text-base text-[#8E9592] max-w-xl leading-relaxed font-sans">
-              {subheadline}
-            </p>
-
-            {/* Primary & Secondary Action CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a href="#projects" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5F5C6] rounded-full">
-                <MagneticButton
-                  strength={10}
-                  className="px-6 py-3 rounded-full bg-[#D5F5C6] hover:bg-[#c2eeaf] text-[#080909] font-medium text-xs font-mono tracking-wide flex items-center gap-2 shadow-lg shadow-[#D5F5C6]/10"
-                >
-                  <span>EXPLORE PROJECTS</span>
-                  <ArrowDown className="w-3.5 h-3.5" />
-                </MagneticButton>
-              </a>
-
-              <a
-                href="#contact"
-                className="px-5 py-3 rounded-full border border-white/15 hover:border-[#D5F5C6]/40 bg-[#0E1010]/70 hover:bg-[#141716] text-[#F5F5F5] text-xs font-mono tracking-wide transition-all flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D5F5C6]"
-              >
-                <span>CONNECT</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#D5F5C6]" />
-              </a>
-            </div>
-
-            {/* Core Trait Tags */}
-            <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/5 font-mono text-[11px] text-[#8E9592]">
-              <span className="text-[#5A625E]">Focus:</span>
-              <span className="px-2 py-0.5 rounded border border-white/5 bg-[#0E1010]">Web Application Pentesting</span>
-              <span className="px-2 py-0.5 rounded border border-white/5 bg-[#0E1010]">Reconnaissance Tooling</span>
-              <span className="px-2 py-0.5 rounded border border-white/5 bg-[#0E1010]">Burp Suite Labs</span>
-              <span className="px-2 py-0.5 rounded border border-white/5 bg-[#0E1010]">Python & Bash</span>
-            </div>
-          </AnimatedContent>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#D5DADF] bg-[#FFFFFF] text-xs font-sans text-[#46505B] shadow-2xs">
+            <span className="font-medium text-[#0F1419]">Internship Ready: Summer 2027</span>
+          </div>
         </div>
 
-        {/* Right Column: Interactive Mini-Terminal with Smooth Bound & Subtle Glow */}
-        <div className="lg:col-span-5 w-full pointer-events-auto">
-          <div className="relative group transition-all duration-300">
-            <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-[#D5F5C6]/20 via-[#D5F5C6]/5 to-transparent blur-md opacity-60 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            <div className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-2px]">
-              <InteractiveTerminal />
-            </div>
-          </div>
+        {/* Headline & Positioning */}
+        <div className="space-y-4 max-w-4xl mb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#0F1419] tracking-tight leading-[1.12]">
+            Mohamed Afraz Ali
+          </h1>
+          <p className="text-xl sm:text-2xl font-display font-semibold text-[#1D4ED8] tracking-tight">
+            Security-focused developer | Aspiring Web Application Pentester
+          </p>
+        </div>
+
+        {/* Narrative / Bio Intro */}
+        <div className="max-w-3xl space-y-4 text-base sm:text-lg text-[#46505B] font-sans leading-relaxed mb-10">
+          <p>
+            I’m a second-year B.Tech Cybersecurity student at Hindustan Institute of Technology &amp; Science in Chennai, focused on web application security, vulnerability assessment, and reconnaissance.
+          </p>
+          <p className="text-sm sm:text-base text-[#46505B]">
+            I learn by doing: PortSwigger Web Security Academy labs on access control, SSRF, CSRF, and API testing, TryHackMe rooms, and tools I build myself, including a Python recon workflow and a defensive Wi-Fi deauthentication detector.
+          </p>
+          <p className="text-sm sm:text-base text-[#46505B]">
+            I’m looking for a <strong>Summer 2027 internship</strong> where I can work on real application security and learn from experienced engineers.
+          </p>
+        </div>
+
+        {/* Call to Actions */}
+        <div className="flex flex-wrap items-center gap-3.5 pt-2">
+          <a
+            href="#projects"
+            className="px-6 py-3 rounded-xl bg-[#1D4ED8] hover:bg-[#123499] text-white text-sm font-medium tracking-wide flex items-center gap-2 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4ED8]"
+          >
+            <span>View Projects</span>
+            <ArrowDown className="w-4 h-4" />
+          </a>
+
+          <a
+            href="#practice"
+            className="px-6 py-3 rounded-xl border border-[#D5DADF] bg-[#FFFFFF] hover:bg-[#F3F4F5] text-[#0F1419] text-sm font-medium tracking-wide flex items-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4ED8]"
+          >
+            <span>Web Security Practice</span>
+            <Terminal className="w-4 h-4 text-[#1D4ED8]" />
+          </a>
+
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3 rounded-xl border border-[#D5DADF] bg-[#FFFFFF] hover:bg-[#F3F4F5] text-[#46505B] hover:text-[#0F1419] text-sm font-medium tracking-wide flex items-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4ED8]"
+          >
+            <FileText className="w-4 h-4 text-[#1D4ED8]" />
+            <span>Resume</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+          </a>
         </div>
       </div>
     </section>
