@@ -11,7 +11,7 @@ export const EducationSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Academic Background Card */}
-          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm space-y-4">
+          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-4">
             <div className="flex items-center gap-2.5 text-xs font-mono font-semibold text-[var(--accent)] uppercase tracking-wider">
               <GraduationCap className="w-4 h-4" />
               <span>Degree Program</span>
@@ -38,7 +38,7 @@ export const EducationSection: React.FC = () => {
           </div>
 
           {/* Certification Card */}
-          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm space-y-4 flex flex-col justify-between">
+          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5 text-xs font-mono font-semibold text-[var(--accent)] uppercase tracking-wider">

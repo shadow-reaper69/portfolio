@@ -27,7 +27,7 @@ export const PracticeSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: PortSwigger Web Security Academy (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm space-y-5">
+            <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-5">
               {/* Card Header (Plain text, no icon-in-a-box) */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[var(--border-color)]">
                 <div>
@@ -125,7 +125,7 @@ export const PracticeSection: React.FC = () => {
 
           {/* Right Column: TryHackMe Profile & Rooms (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm space-y-5">
+            <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-5">
               {/* Card Header (Plain text, no icon-in-a-box) */}
               <div className="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
                 <div>

@@ -52,7 +52,7 @@ export const SkillsSection: React.FC = () => {
           {TOOL_GROUPS.map((group, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm space-y-3"
+              className="p-5 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-3"
             >
               <h3 className="text-base font-display font-bold text-[var(--text-primary)] pb-2 border-b border-[var(--border-color)]">
                 {group.category}

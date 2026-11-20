@@ -8,7 +8,7 @@ export const AboutSection: React.FC = () => {
           About
         </h2>
 
-        <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] space-y-4 shadow-sm">
+        <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md space-y-4 shadow-sm">
           <p className="text-sm sm:text-base text-[var(--text-secondary)] font-sans leading-relaxed">
             I approach cybersecurity from an analytical, hands-on perspective. My daily work revolves around analyzing web applications for authentication bypasses, broken access control, and server-side vulnerabilities, alongside writing custom Python and Bash utilities to streamline attack surface discovery.
           </p>

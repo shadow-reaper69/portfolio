@@ -17,7 +17,7 @@ export const ProjectsSection: React.FC = () => {
           {projectsData.map((project: Project) => (
             <article
               key={project.id}
-              className="flex flex-col justify-between h-full p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] shadow-sm hover:border-[var(--accent)] transition-all"
+              className="flex flex-col justify-between h-full p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm hover:border-[var(--accent)] transition-all"
             >
               <div>
                 {/* Header: Title on Left, Status/Link on Right */}
