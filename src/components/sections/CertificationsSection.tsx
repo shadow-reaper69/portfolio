@@ -7,7 +7,7 @@ export const CertificationsSection: React.FC = () => {
   const { certifications, hackathons } = portfolioData
 
   return (
-    <section id="certifications" className="py-24 border-t border-white/5 bg-[#080909] relative">
+    <section id="certifications" className="py-16 sm:py-20 border-t border-white/5 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="space-y-2 mb-12">
@@ -18,9 +18,6 @@ export const CertificationsSection: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#F5F5F5] tracking-tight">
             Certifications & Competitive Engagements
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-[#8E9592] max-w-xl">
-            Verified certification milestones and collaborative hackathon problem solving.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

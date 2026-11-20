@@ -23,9 +23,9 @@ export const InteractiveTerminal: React.FC = () => {
       id: 'init-1',
       result: (
         <div className="text-xs text-[#8E9592] space-y-1">
-          <p className="text-[#D5F5C6] font-semibold">afraz@recon-hub:~$ session --mode live</p>
+          <p className="text-[#D5F5C6] font-semibold">afraz@kali:~$ session --mode live</p>
           <p className="leading-relaxed">
-            Welcome. Type <span className="text-[#D5F5C6] underline font-semibold">help</span> to inspect available directives or use the quick tags below.
+            Welcome. Type <span className="text-[#D5F5C6] underline font-semibold">help</span> to inspect available commands or use the quick tags below.
           </p>
         </div>
       )
@@ -66,7 +66,7 @@ export const InteractiveTerminal: React.FC = () => {
       case 'whoami':
         resultNode = (
           <div className="space-y-1 text-xs text-[#F5F5F5]">
-            <p className="font-semibold text-[#D5F5C6]">MOHAMED AFRAZ ALI T A</p>
+            <p className="font-semibold text-[#D5F5C6]">MOHAMED AFRAZ ALI</p>
             <p className="text-[#8E9592]">2nd Year B.Tech CSE Cybersecurity Undergraduate</p>
             <p className="text-[#8E9592]">Aspiring Penetration Tester & Security-Focused Developer</p>
             <p className="text-xs text-[#D5F5C6]/90 mt-1">Focus: Web application security, Burp Suite labs, and automated reconnaissance.</p>
@@ -221,7 +221,7 @@ export const InteractiveTerminal: React.FC = () => {
           </div>
           <span className="text-[#8E9592] text-[11px] ml-2 flex items-center gap-1.5 font-medium">
             <Terminal className="w-3.5 h-3.5 text-[#D5F5C6]" />
-            afraz@recon-terminal: ~
+            afraz@kali: ~
           </span>
         </div>
         <div className="flex items-center gap-2 text-[#8E9592]">

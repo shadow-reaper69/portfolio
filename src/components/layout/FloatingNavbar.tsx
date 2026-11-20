@@ -62,7 +62,7 @@ export const FloatingNavbar: React.FC = () => {
         <a
           href="#"
           className="flex items-center gap-2 text-white hover:opacity-85 transition-opacity py-1 pr-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D5F5C6] rounded-full"
-          aria-label="Mohamed Afraz Ali T A Home"
+          aria-label="Mohamed Afraz Ali Home"
         >
           <div className="w-7 h-7 rounded-full bg-[#D5F5C6]/15 border border-[#D5F5C6]/40 flex items-center justify-center">
             <Shield className="w-3.5 h-3.5 text-[#D5F5C6]" />

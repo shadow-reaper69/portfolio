@@ -32,10 +32,9 @@ export const Footer: React.FC = () => {
                 {portfolioData.personal.name}
               </span>
             </div>
-            <p className="text-xs text-[#8E9592] max-w-md leading-relaxed">
+            <p className="text-xs text-[#8E9592] max-w-md leading-relaxed font-sans">
               {portfolioData.personal.headline}. Second-year B.Tech CSE Cybersecurity undergrad
-              focusing on web application pentesting, reconnaissance pipelines, and automated security
-              tooling.
+              focusing on web application security, reconnaissance, and Linux.
             </p>
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-white/5 bg-[#0E1010] text-[11px] font-mono text-[#8E9592]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D5F5C6]" />
@@ -47,10 +46,10 @@ export const Footer: React.FC = () => {
           <div className="space-y-3 font-mono">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#F5F5F5]">Sections</h4>
             <ul className="space-y-1.5">
-              <li><a href="#about" className="hover:text-[#D5F5C6] transition-colors">About Journey</a></li>
-              <li><a href="#skills" className="hover:text-[#D5F5C6] transition-colors">Skills Matrix</a></li>
-              <li><a href="#projects" className="hover:text-[#D5F5C6] transition-colors">Featured Projects</a></li>
-              <li><a href="#journey" className="hover:text-[#D5F5C6] transition-colors">Learning Roadmap</a></li>
+              <li><a href="#about" className="hover:text-[#D5F5C6] transition-colors">About</a></li>
+              <li><a href="#skills" className="hover:text-[#D5F5C6] transition-colors">Skills</a></li>
+              <li><a href="#projects" className="hover:text-[#D5F5C6] transition-colors">Projects</a></li>
+              <li><a href="#journey" className="hover:text-[#D5F5C6] transition-colors">Journey</a></li>
               <li><a href="#certifications" className="hover:text-[#D5F5C6] transition-colors">Certifications & Hackathons</a></li>
             </ul>
           </div>
@@ -98,9 +97,7 @@ export const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px]">
           <div>
-            &copy; {CURRENT_YEAR} Mohamed Afraz Ali T A. All rights reserved.
-            <span className="hidden sm:inline mx-2 text-white/10">|</span>
-            <span className="text-[#5A625E]">Zero tracking. Static execution. Verified data.</span>
+            &copy; {CURRENT_YEAR} Mohamed Afraz Ali. All rights reserved.
           </div>
 
           <button

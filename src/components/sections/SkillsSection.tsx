@@ -2,6 +2,7 @@ import React from 'react'
 import { Shield, Scan, Terminal, Cpu } from 'lucide-react'
 import { portfolioData } from '../../data/portfolioData'
 import { SpotlightCard } from '../ui/SpotlightCard'
+import { AnimatedContent } from '../ui/AnimatedContent'
 
 export const SkillsSection: React.FC = () => {
   const { skillCategories } = portfolioData
@@ -35,7 +36,7 @@ export const SkillsSection: React.FC = () => {
   }
 
   return (
-    <section id="skills" className="py-24 border-t border-white/5 bg-[#080909] relative">
+    <section id="skills" className="py-16 sm:py-20 border-t border-white/5 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="space-y-2 mb-12">
@@ -44,15 +45,19 @@ export const SkillsSection: React.FC = () => {
             <span>02 / Capabilities</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#F5F5F5] tracking-tight">
-            Security & Development Skills Matrix
+            Security & Development Skills
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-[#8E9592] max-w-xl">
-            Accurately classified by current hands-on proficiency. No inflated 99% progress bars.
-          </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Skills Grid with AnimatedContent */}
+        <AnimatedContent
+          distance={40}
+          direction="vertical"
+          duration={0.7}
+          stagger={0.1}
+          threshold={0.1}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {skillCategories.map((cat, idx) => (
             <SpotlightCard key={idx} className="p-6">
               {/* Category Header */}
@@ -61,8 +66,8 @@ export const SkillsSection: React.FC = () => {
                   {renderIcon(cat.iconName)}
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-[#F5F5F5]">{cat.category}</h3>
-                  <p className="text-xs text-[#8E9592]">{cat.description}</p>
+                  <h3 className="text-base font-semibold text-[#F5F5F5] font-display">{cat.category}</h3>
+                  <p className="text-xs text-[#8E9592] font-sans">{cat.description}</p>
                 </div>
               </div>
 
@@ -79,7 +84,7 @@ export const SkillsSection: React.FC = () => {
                         {skill.name}
                       </div>
                       {skill.notes && (
-                        <p className="text-[11px] text-[#8E9592] ml-3 mt-0.5">{skill.notes}</p>
+                        <p className="text-[11px] text-[#8E9592] ml-3 mt-0.5 font-sans">{skill.notes}</p>
                       )}
                     </div>
 
@@ -95,7 +100,7 @@ export const SkillsSection: React.FC = () => {
               </div>
             </SpotlightCard>
           ))}
-        </div>
+        </AnimatedContent>
       </div>
     </section>
   )

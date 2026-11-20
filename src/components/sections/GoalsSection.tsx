@@ -7,7 +7,7 @@ export const GoalsSection: React.FC = () => {
   const { interests, futureGoals } = portfolioData
 
   return (
-    <section id="goals" className="py-24 border-t border-white/5 bg-[#080909] relative">
+    <section id="goals" className="py-16 sm:py-20 border-t border-white/5 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="space-y-2 mb-12">
@@ -18,9 +18,6 @@ export const GoalsSection: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#F5F5F5] tracking-tight">
             Research Interests & 12-Month Targets
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-[#8E9592] max-w-xl">
-            Where my technical curiosity is focused today and the milestones I am targeting next.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

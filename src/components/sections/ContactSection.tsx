@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Mail, Copy, Check, Download, ArrowUpRight, ShieldCheck } from 'lucide-react'
+import { Mail, Copy, Check, Download, ArrowUpRight } from 'lucide-react'
 import { portfolioData } from '../../data/portfolioData'
 import { SpotlightCard } from '../ui/SpotlightCard'
 import { MagneticButton } from '../ui/MagneticButton'
@@ -16,7 +16,7 @@ export const ContactSection: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-24 border-t border-white/5 bg-[#080909] relative">
+    <section id="contact" className="py-16 sm:py-20 border-t border-white/5 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="space-y-2 mb-12">
@@ -152,17 +152,6 @@ export const ContactSection: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 text-[#8E9592] group-hover:text-[#D5F5C6] transition-colors" />
               </a>
             </SpotlightCard>
-
-            {/* Verification & Static Security Card */}
-            <div className="p-4 rounded-xl border border-white/5 bg-[#0E1010]/60 text-xs text-[#8E9592] space-y-1.5 font-mono">
-              <div className="flex items-center gap-2 text-[#D5F5C6]">
-                <ShieldCheck className="w-4 h-4" />
-                <span className="font-semibold">Security & Privacy Assurance</span>
-              </div>
-              <p className="text-[11px] leading-relaxed">
-                This website is built with zero third-party trackers, no client cookies, and strict CSP compatibility. Pure static delivery.
-              </p>
-            </div>
           </div>
         </div>
       </div>

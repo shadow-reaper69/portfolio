@@ -2,30 +2,35 @@ import React from 'react'
 import { ExternalLink } from 'lucide-react'
 import { portfolioData } from '../../data/portfolioData'
 import { SpotlightCard } from '../ui/SpotlightCard'
+import { AnimatedContent } from '../ui/AnimatedContent'
 import { GithubIcon } from '../ui/Icons'
 
 export const ProjectsSection: React.FC = () => {
   const { projects } = portfolioData
 
   return (
-    <section id="projects" className="py-24 border-t border-white/5 bg-[#080909] relative">
+    <section id="projects" className="py-16 sm:py-20 border-t border-white/5 bg-transparent relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="space-y-2 mb-12">
           <div className="flex items-center gap-2 text-[#D5F5C6] font-mono text-xs uppercase tracking-widest">
             <span className="w-2 h-2 rounded-full bg-[#D5F5C6]" />
-            <span>03 / Selected Works</span>
+            <span>03 / Projects</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-semibold text-[#F5F5F5] tracking-tight">
-            Security Tooling & Software Engineering
+            Security Tooling & Projects
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-[#8E9592] max-w-xl">
-            Real implementations built with security-first design, cryptographic checks, and automated pipelines.
-          </p>
         </div>
 
-        {/* Projects Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Projects Cards Grid with AnimatedContent */}
+        <AnimatedContent
+          distance={40}
+          direction="vertical"
+          duration={0.7}
+          stagger={0.12}
+          threshold={0.1}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {projects.map((proj, idx) => (
             <SpotlightCard key={proj.id} className="flex flex-col justify-between p-6 h-full">
               <div>
@@ -46,16 +51,16 @@ export const ProjectsSection: React.FC = () => {
                 </p>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-[#8E9592] leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-[#8E9592] leading-relaxed mb-4 font-sans">
                   {proj.description}
                 </p>
 
                 {/* Technical Highlights */}
                 <div className="space-y-2 mb-6">
                   <span className="text-[11px] font-mono text-[#F5F5F5] font-semibold block">
-                    Security & Architecture Focus:
+                    Key Features:
                   </span>
-                  <ul className="space-y-1.5 text-xs text-[#8E9592]">
+                  <ul className="space-y-1.5 text-xs text-[#8E9592] font-sans">
                     {proj.technicalPoints.map((point, pIdx) => (
                       <li key={pIdx} className="flex items-start gap-1.5">
                         <span className="text-[#D5F5C6] font-mono mt-0.5">›</span>
@@ -109,7 +114,7 @@ export const ProjectsSection: React.FC = () => {
               </div>
             </SpotlightCard>
           ))}
-        </div>
+        </AnimatedContent>
       </div>
     </section>
   )

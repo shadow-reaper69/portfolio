@@ -28,7 +28,7 @@ export interface LetterGlitchProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 const DEFAULT_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$&*()-_+=/[]{};:<>.,0123456789'
-const DEFAULT_FONT = "ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace"
+const DEFAULT_FONT = "'Montserrat', sans-serif"
 const DARK_COLORS = ['#ffffff', '#D5F5C6', '#8E9592']
 const LIGHT_COLORS = ['#18181b', '#0f9f6e']
 const MAX_COLORS = 8

@@ -1,9 +1,9 @@
-# PROJECT CONTEXT — MOHAMED AFRAZ ALI T A PORTFOLIO
+# PROJECT CONTEXT — MOHAMED AFRAZ ALI PORTFOLIO
 
 ## 1. Project Overview & Identity
-- **Owner**: Mohamed Afraz Ali T A
+- **Owner**: Mohamed Afraz Ali
 - **Current Position**: Second-Year B.Tech CSE Cybersecurity Undergraduate
-- **Aspirational Role**: Penetration Tester, Security-Focused Developer, AI-Assisted Developer
+- **Aspirational Role**: Penetration Tester, Security-Focused Developer
 - **Tone & Persona**: Technical, grounded, precise, honest (evidence over claims, lab-driven progress).
 
 ## 2. Design System & Design Tokens
@@ -17,16 +17,20 @@
 - **Border Subtle**: `rgba(255, 255, 255, 0.08)`
 - **Border Accent**: `rgba(213, 245, 198, 0.28)`
 - **Typography Scale**:
-  - Headings / Display: `Space Grotesk`
-  - Body: `Inter`
-  - Code / Technical / Terminal: `JetBrains Mono`
+  - Headings / Display / Monogram / Tags: `Montserrat`
+  - Body / Subtext / UI: `Poppins`
 
 ## 3. Technical Stack
 - **Framework**: React 19 + TypeScript + Vite 8 (Dev server on port `3000`)
 - **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`)
 - **Icons**: `lucide-react` + inline SVGs for branded icons (`GithubIcon`, `LinkedinIcon`)
-- **Animations**: Framer Motion (tactile spring physics on MagneticButton)
-- **Graphics / Visuals**: Pure HTML5 2D Canvas (`NetworkCanvas`) with DPR retina scaling, touch interaction, and `prefers-reduced-motion` support
+- **Animations & Physics**: 
+  - GSAP (`AnimatedContent` staggered scroll/mount triggers)
+  - Framer Motion (tactile spring physics on `MagneticButton`)
+- **Graphics / Visuals**:
+  - WebGL2 Shader: React Bits `LetterGlitch` (Exclusive interactive cipher matrix background for the About section)
+  - WebGL2 Shader: React Bits `DotGrid` (Global interactive dot matrix with elastic jelly tension, cursor stretch, and click shockwaves powering Hero, Skills, Projects, Journey, Certifications, Goals, and Contact)
+  - Pure HTML5 2D Canvas: `NetworkCanvas` recon mesh with touch & DPR retina support
 - **Favicon**: Bespoke SVG security shield with milk-green checkmark and obsidian background
 
 ## 4. Implementation Phase Status
