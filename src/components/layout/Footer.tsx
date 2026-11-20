@@ -16,53 +16,53 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <footer id="contact" className="w-full border-t border-[#36404A] bg-[#0F1419] pt-16 pb-12 text-[#E8ECEF]">
+    <footer id="contact" className="w-full border-t border-white/10 bg-[#080909] pt-16 pb-12 text-[#F5F5F5]">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#36404A]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Identity Column (6 cols) */}
           <div className="md:col-span-6 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-[#1D4ED8]/20 border border-[#1D4ED8]/40 flex items-center justify-center text-[#9DB8FF]">
+              <div className="w-8 h-8 rounded-full bg-[#D5F5C6]/15 border border-[#D5F5C6]/30 flex items-center justify-center text-[#D5F5C6]">
                 <Shield className="w-4 h-4" />
               </div>
-              <span className="font-display text-base font-bold text-[#E8ECEF]">
+              <span className="font-display text-base font-bold text-[#F5F5F5]">
                 Mohamed Afraz Ali
               </span>
             </div>
 
-            <p className="text-sm text-[#A9B3BD] max-w-md leading-relaxed font-sans">
+            <p className="text-sm text-[#8E9592] max-w-md leading-relaxed font-sans">
               Security-focused developer | Aspiring Web Application Pentester. Second-year B.Tech CSE Cybersecurity student at Hindustan Institute of Technology &amp; Science, Chennai.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#36404A] bg-[#0F1419] text-xs font-sans text-[#A9B3BD]">
-              <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-[#0E1010] text-xs font-sans text-[#8E9592]">
+              <span className="w-2 h-2 rounded-full bg-[#D5F5C6]" />
               <span>Available for Summer 2027 Internship Opportunities</span>
             </div>
           </div>
 
           {/* Quick Navigation (3 cols) */}
           <div className="md:col-span-3 space-y-3 font-sans">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#E8ECEF]">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D5F5C6] font-mono">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm text-[#A9B3BD]">
+            <ul className="space-y-2 text-sm text-[#8E9592]">
               <li>
-                <a href="#about" className="hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline">
+                <a href="#about" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
                   About &amp; Education
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline">
+                <a href="#skills" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
                   Technical Skills
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline">
+                <a href="#projects" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
                   Security Projects
                 </a>
               </li>
               <li>
-                <a href="#practice" className="hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline">
+                <a href="#practice" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
                   Web Security Practice
                 </a>
               </li>
@@ -71,9 +71,9 @@ export const Footer: React.FC = () => {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#9DB8FF] transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:underline"
+                  className="hover:text-[#D5F5C6] transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:underline"
                 >
-                  <FileText className="w-3.5 h-3.5 text-[#9DB8FF]" />
+                  <FileText className="w-3.5 h-3.5 text-[#D5F5C6]" />
                   <span>Resume (PDF)</span>
                 </a>
               </li>
@@ -82,18 +82,18 @@ export const Footer: React.FC = () => {
 
           {/* Connect & Channels (3 cols) */}
           <div className="md:col-span-3 space-y-3 font-sans">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#E8ECEF]">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D5F5C6] font-mono">
               Connect Directly
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#A9B3BD]">
+            <ul className="space-y-2.5 text-sm text-[#8E9592]">
               <li>
                 <button
                   onClick={copyEmail}
-                  className="flex items-center gap-2 text-[#E8ECEF] hover:text-[#9DB8FF] transition-colors text-left group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#9DB8FF] rounded"
+                  className="flex items-center gap-2 text-[#F5F5F5] hover:text-[#D5F5C6] transition-colors text-left group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D5F5C6] rounded"
                   title="Click to copy email address"
                   aria-label="Copy email address afrazali290@gmail.com"
                 >
-                  <Mail className="w-4 h-4 text-[#9DB8FF] shrink-0" />
+                  <Mail className="w-4 h-4 text-[#D5F5C6] shrink-0" />
                   <span className="font-mono text-xs">afrazali290@gmail.com</span>
                   {copied ? (
                     <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -107,9 +107,9 @@ export const Footer: React.FC = () => {
                   href="https://github.com/shadow-reaper69/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline"
+                  className="flex items-center gap-2 hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline"
                 >
-                  <GithubIcon className="w-4 h-4 shrink-0 text-[#9DB8FF]" />
+                  <GithubIcon className="w-4 h-4 shrink-0 text-[#D5F5C6]" />
                   <span>GitHub</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
                 </a>
@@ -119,9 +119,9 @@ export const Footer: React.FC = () => {
                   href="https://www.linkedin.com/in/afraz-ali-1085a1372/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline"
+                  className="flex items-center gap-2 hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline"
                 >
-                  <LinkedinIcon className="w-4 h-4 shrink-0 text-[#9DB8FF]" />
+                  <LinkedinIcon className="w-4 h-4 shrink-0 text-[#D5F5C6]" />
                   <span>LinkedIn</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
                 </a>
@@ -131,9 +131,9 @@ export const Footer: React.FC = () => {
                   href="https://tryhackme.com/p/afrazali290"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline"
+                  className="flex items-center gap-2 hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline"
                 >
-                  <Shield className="w-4 h-4 shrink-0 text-[#9DB8FF]" />
+                  <Shield className="w-4 h-4 shrink-0 text-[#D5F5C6]" />
                   <span>TryHackMe Profile</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
                 </a>
@@ -143,14 +143,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#A9B3BD]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#8E9592]">
           <p className="m-0">
             &copy; 2026 Mohamed Afraz Ali
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-xs text-[#A9B3BD] hover:text-[#9DB8FF] transition-colors focus-visible:outline-none focus-visible:underline"
+            className="flex items-center gap-1.5 text-xs text-[#8E9592] hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline"
             aria-label="Scroll back to top"
           >
             <span>Back to top</span>

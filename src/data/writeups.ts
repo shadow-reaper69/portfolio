@@ -14,8 +14,14 @@ export interface WriteupsData {
   intro: string;
   portSwigger: {
     totalLabsCompleted: number;
+    rank: string;
+    levelTitle: string;
+    vulnerabilityProgress: string;
+    apprenticeLabs: string;
+    practitionerLabs: string;
+    expertLabs: string;
+    screenshotUrl: string;
     profilePlaceholder: string;
-    profileUrl?: string;
     topics: PortSwiggerTopic[];
   };
   tryHackMe: {
@@ -23,8 +29,10 @@ export interface WriteupsData {
     ranking: string;
     capabilityScore: number;
     annualEvents: number;
+    highestStreak: number;
     enrolledPath: string;
     pathStatus: string;
+    screenshotUrl: string;
     curatedRooms: TryHackMeRoom[];
   };
 }
@@ -35,6 +43,13 @@ export const writeupsData: WriteupsData = {
     'I practise web application security through structured labs, hands-on testing, and technical learning. My current focus includes access control, request handling, server-side vulnerabilities, and API security.',
   portSwigger: {
     totalLabsCompleted: 15,
+    rank: '# 267569',
+    levelTitle: 'NEWBIE',
+    vulnerabilityProgress: '5%',
+    apprenticeLabs: '8 / 61',
+    practitionerLabs: '6 / 173',
+    expertLabs: '1 / 39',
+    screenshotUrl: '/practice/portswigger-progress.png',
     profilePlaceholder: 'PortSwigger Profile URL to be linked',
     topics: [
       {
@@ -67,9 +82,11 @@ export const writeupsData: WriteupsData = {
     profileUrl: 'https://tryhackme.com/p/afrazali290',
     ranking: 'Top 25%',
     capabilityScore: 38,
-    annualEvents: 227,
+    annualEvents: 226,
+    highestStreak: 2,
     enrolledPath: 'Web Application Red Teaming',
     pathStatus: 'In progress',
+    screenshotUrl: '/practice/tryhackme-profile.jpg',
     curatedRooms: [
       { name: 'Wgel CTF', difficulty: 'Easy' },
       { name: 'Brooklyn Nine Nine', difficulty: 'Easy' },

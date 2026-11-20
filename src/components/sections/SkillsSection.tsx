@@ -11,7 +11,7 @@ interface SkillCategory {
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Web Application Security',
-    icon: <Globe className="w-5 h-5 text-[#1D4ED8]" />,
+    icon: <Globe className="w-5 h-5 text-[#D5F5C6]" />,
     description: 'Vulnerability assessment, request tampering, and web security lab testing.',
     skills: [
       'Burp Suite (Proxy, Repeater, Intruder)',
@@ -24,7 +24,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: 'Reconnaissance & Assessment',
-    icon: <Search className="w-5 h-5 text-[#1D4ED8]" />,
+    icon: <Search className="w-5 h-5 text-[#D5F5C6]" />,
     description: 'Target reconnaissance, asset enumeration, and automated probing.',
     skills: [
       'Subfinder (Subdomain Discovery)',
@@ -37,7 +37,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: 'Systems & Security Tooling',
-    icon: <Terminal className="w-5 h-5 text-[#1D4ED8]" />,
+    icon: <Terminal className="w-5 h-5 text-[#D5F5C6]" />,
     description: 'Operating systems, network frame monitoring, and security workflow environments.',
     skills: [
       'Linux / Kali Linux Workflows',
@@ -49,7 +49,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: 'Programming & Scripting',
-    icon: <Code2 className="w-5 h-5 text-[#1D4ED8]" />,
+    icon: <Code2 className="w-5 h-5 text-[#D5F5C6]" />,
     description: 'Languages used for security automation, embedded debugging, and development.',
     skills: [
       'Python (CLI Tooling & Subprocess Automation)',
@@ -63,18 +63,18 @@ const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const SkillsSection: React.FC = () => {
   return (
-    <section id="skills" className="py-20 border-t border-[#D5DADF] bg-[#F3F4F5]">
+    <section id="skills" className="py-20 border-t border-white/10 bg-transparent relative">
       <div className="max-w-5xl mx-auto px-6">
         {/* Section Header */}
         <div className="mb-12">
-          <div className="flex items-center gap-2 text-[#1D4ED8] font-sans text-xs uppercase tracking-wider font-semibold mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#1D4ED8]" />
+          <div className="flex items-center gap-2 text-[#D5F5C6] font-mono text-xs uppercase tracking-wider font-semibold mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#D5F5C6]" />
             <span>02 / Technical Skills</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0F1419] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#F5F5F5] tracking-tight">
             Security &amp; Engineering Tooling
           </h2>
-          <p className="text-sm sm:text-base text-[#46505B] mt-2 max-w-2xl font-sans">
+          <p className="text-sm sm:text-base text-[#8E9592] mt-2 max-w-2xl font-sans">
             Technical competencies applied across web penetration testing labs, network reconnaissance, and defensive tooling.
           </p>
         </div>
@@ -84,28 +84,28 @@ export const SkillsSection: React.FC = () => {
           {SKILL_CATEGORIES.map((cat, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl border border-[#D5DADF] bg-[#FFFFFF] shadow-2xs hover:border-[#1D4ED8]/40 transition-colors"
+              className="p-6 rounded-2xl border border-white/10 bg-[#0E1010]/85 backdrop-blur-md shadow-xl hover:border-[#D5F5C6]/30 transition-all card-border-glow"
             >
               {/* Category Header */}
-              <div className="flex items-start gap-3.5 pb-4 mb-4 border-b border-[#D5DADF]">
-                <div className="w-10 h-10 rounded-xl bg-[#F3F4F5] border border-[#D5DADF] flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-3.5 pb-4 mb-4 border-b border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-[#141716] border border-white/10 flex items-center justify-center shrink-0">
                   {cat.icon}
                 </div>
                 <div>
-                  <h3 className="text-base font-display font-bold text-[#0F1419]">
+                  <h3 className="text-base font-display font-bold text-[#F5F5F5]">
                     {cat.title}
                   </h3>
-                  <p className="text-xs text-[#46505B] mt-0.5 font-sans">
+                  <p className="text-xs text-[#8E9592] mt-0.5 font-sans">
                     {cat.description}
                   </p>
                 </div>
               </div>
 
               {/* Skills List */}
-              <ul className="space-y-2 font-sans text-xs sm:text-sm text-[#46505B]">
+              <ul className="space-y-2 font-sans text-xs sm:text-sm text-[#8E9592]">
                 {cat.skills.map((skill, sIdx) => (
                   <li key={sIdx} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8] shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D5F5C6] shrink-0" />
                     <span>{skill}</span>
                   </li>
                 ))}

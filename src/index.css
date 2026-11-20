@@ -2,31 +2,42 @@
 
 @layer base {
   :root {
-    --bg: #F3F4F5;
-    --surface: #FFFFFF;
-    --ink: #0F1419;
-    --muted: #46505B;
-    --line: #D5DADF;
-    --accent: #1D4ED8;
-    --accent-hover: #123499;
+    --bg-void: #080909;
+    --bg-surface: #0E1010;
+    --bg-surface-elevated: #151817;
+    --accent-milk: #D5F5C6;
+    --text-primary: #F5F5F5;
+    --text-secondary: #8E9592;
+    --text-muted: #5A625E;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(213, 245, 198, 0.28);
 
-    --dark: #0F1419;
-    --on-dark: #E8ECEF;
-    --on-dark-muted: #A9B3BD;
-    --dark-line: #36404A;
-    --link-on-dark: #9DB8FF;
+    /* Mapped standard tokens */
+    --bg: #080909;
+    --surface: #0E1010;
+    --ink: #F5F5F5;
+    --muted: #8E9592;
+    --line: rgba(255, 255, 255, 0.08);
+    --accent: #D5F5C6;
+    --accent-hover: #c2eeaf;
+
+    --dark: #080909;
+    --on-dark: #F5F5F5;
+    --on-dark-muted: #8E9592;
+    --dark-line: rgba(255, 255, 255, 0.08);
+    --link-on-dark: #D5F5C6;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg);
-    color: var(--ink);
+    background-color: var(--bg-void);
+    color: var(--text-primary);
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
-    background-color: var(--bg);
-    color: var(--ink);
+    background-color: var(--bg-void);
+    color: var(--text-primary);
     overflow-x: hidden;
     min-height: 100vh;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -40,19 +51,19 @@
     outline-offset: 2px;
   }
 
-  /* Clean subtle scrollbar */
+  /* Clean subtle cyber scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #E5E7EB;
+    background: #080909;
   }
   ::-webkit-scrollbar-thumb {
-    background: #9CA3AF;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #6B7280;
+    background: rgba(213, 245, 198, 0.35);
   }
 }
 
@@ -69,30 +80,20 @@ body, p, span, li, a, label, input, textarea {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Monospace / Code / Terminal styled cleanly in Montserrat with monospace spacing */
+/* Monospace styled in Montserrat */
 .font-mono,
-.font-mono-code,
 code, kbd, pre {
-  font-family: 'Montserrat', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  letter-spacing: 0.01em;
+  font-family: 'Montserrat', monospace;
+  letter-spacing: 0.02em;
 }
 
-/* Card Surface styles */
-.editorial-card {
-  background-color: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 1px 3px rgba(15, 20, 25, 0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+/* Cyber card border glow */
+.card-border-glow {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.editorial-card:hover {
-  border-color: #BAC2CB;
-  box-shadow: 0 4px 12px rgba(15, 20, 25, 0.08);
-}
-
-/* Dark Surface for Contact / Footer */
-.dark-surface {
-  background-color: var(--dark);
-  color: var(--on-dark);
-  border-top: 1px solid var(--dark-line);
+.card-border-glow:hover {
+  border-color: rgba(213, 245, 198, 0.35);
+  box-shadow: 0 0 24px rgba(213, 245, 198, 0.06);
 }
