@@ -1,56 +1,47 @@
+import { ThemeProvider } from './context/ThemeContext'
+import { useTheme } from './context/useTheme'
 import { FloatingNavbar } from './components/layout/FloatingNavbar'
 import { Footer } from './components/layout/Footer'
-import { DotGrid } from './components/ui/DotGrid'
+import { GradientBars } from './components/ui/GradientBars'
 import { HeroSection } from './components/sections/HeroSection'
 import { AboutSection } from './components/sections/AboutSection'
 import { SkillsSection } from './components/sections/SkillsSection'
 import { ProjectsSection } from './components/sections/ProjectsSection'
+import { EducationSection } from './components/sections/EducationSection'
 import { PracticeSection } from './components/sections/PracticeSection'
 
-export function App() {
-  return (
-    <div className="min-h-screen bg-[#080909] text-[#F5F5F5] relative selection:bg-[#D5F5C6]/20 selection:text-[#D5F5C6]">
-      {/* Global Interactive DotGrid Background */}
-      <div className="fixed inset-0 z-0 pointer-events-auto">
-        <DotGrid
-          baseColor="#151b17"
-          activeColor="#D5F5C6"
-          shape="circle"
-          dotSize={3.5}
-          gap={22}
-          proximity={130}
-          strength={1.2}
-          bounce={0.55}
-          tension={0.35}
-          returnDuration={0.8}
-          shockRadius={300}
-          shockStrength={4.5}
-          swell={0.7}
-          stretch={0.4}
-          glow={0.5}
-          fade={0.15}
-          opacity={0.85}
-          mouseInteraction={true}
-          clickShock={true}
-          className="w-full h-full"
-        />
-      </div>
+function AppContent() {
+  const { isDark } = useTheme()
 
-      {/* Top Floating Glass Navigation */}
+  return (
+    <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] relative selection:bg-[var(--accent)]/20 selection:text-[var(--accent)] transition-colors duration-200">
+      {/* Animated Gradient Bars (Vertical gradient bars shifting in waves) */}
+      <GradientBars isDark={isDark} barWidth={28} gap={12} speed={0.0018} amplitude={130} />
+
+      {/* Top Navigation Bar with Light/Dark Mode Switch */}
       <FloatingNavbar />
 
-      {/* Main Single-Page Sections Flow */}
+      {/* Main Sections Flow in Requested Order */}
       <main className="relative z-10 w-full">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <EducationSection />
         <PracticeSection />
       </main>
 
-      {/* Sleek Cyber Dark Footer */}
+      {/* Footer */}
       <Footer />
     </div>
+  )
+}
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   )
 }
 

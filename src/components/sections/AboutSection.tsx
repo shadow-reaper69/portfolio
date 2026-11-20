@@ -1,40 +1,34 @@
 import React from 'react'
-import { ExternalLink } from 'lucide-react'
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-12 border-t border-white/10 bg-[#080909]">
+    <section id="about" className="py-16 border-t border-[var(--border-color)] bg-transparent">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-xl font-display font-bold text-[#F5F5F5] tracking-tight mb-4">
-          Education &amp; Credentials
+        <h2 className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] tracking-tight mb-6">
+          About
         </h2>
 
-        {/* Short Two-Line Clean Block */}
-        <div className="p-5 rounded-xl border border-white/10 bg-[#0E1010] space-y-3 font-sans text-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[#8E9592]">
-            <div>
-              <strong className="text-[#F5F5F5]">B.Tech in Computer Science &amp; Engineering (Cybersecurity)</strong>
-              <span className="mx-2 hidden sm:inline">&middot;</span>
-              <span className="block sm:inline">Second Year &middot; Hindustan Institute of Technology &amp; Science, Chennai</span>
-            </div>
-            <span className="text-xs text-[#8E9592] font-mono shrink-0">Chennai, Tamil Nadu</span>
-          </div>
+        <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] space-y-4 shadow-sm">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] font-sans leading-relaxed">
+            I approach cybersecurity from an analytical, hands-on perspective. My daily work revolves around analyzing web applications for authentication bypasses, broken access control, and server-side vulnerabilities, alongside writing custom Python and Bash utilities to streamline attack surface discovery.
+          </p>
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] font-sans leading-relaxed">
+            Rather than relying solely on automated scanner output, I focus on understanding underlying HTTP protocol mechanisms, debugging edge cases, and verifying security findings through Burp Suite and terminal-first Linux workflows.
+          </p>
 
-          <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[#8E9592]">
-            <div>
-              <strong className="text-[#F5F5F5]">Certified Cyber Security Analyst (C3SA)</strong>
-              <span className="mx-2 hidden sm:inline">&middot;</span>
-              <span className="block sm:inline">CyberWarFare Labs &middot; Credential ID: <code className="text-[#D5F5C6] font-mono text-xs">C3SA-6ad0ccf6b6d122ea6a91de63</code></span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-[var(--border-color)] text-xs font-mono text-[var(--text-secondary)]">
+            <div className="p-3 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)]">
+              <span className="text-[var(--accent)] font-semibold block mb-1">Methodology</span>
+              <span>Manual verification over scanner noise</span>
             </div>
-            <a
-              href="/certificates/c3sa-certificate.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#D5F5C6] hover:underline shrink-0"
-            >
-              <span>View Certificate</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+            <div className="p-3 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)]">
+              <span className="text-[var(--accent)] font-semibold block mb-1">Core Focus</span>
+              <span>Web App Security, VAPT &amp; Recon</span>
+            </div>
+            <div className="p-3 rounded-lg border border-[var(--border-color)] bg-[var(--bg-card)]">
+              <span className="text-[var(--accent)] font-semibold block mb-1">Environment</span>
+              <span>Linux / Kali, Python, C, Burp Suite</span>
+            </div>
           </div>
         </div>
       </div>

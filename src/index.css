@@ -1,48 +1,53 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --bg-void: #080909;
+  :root,
+  html.dark {
+    --bg-page: #080909;
     --bg-surface: #0E1010;
-    --bg-surface-elevated: #151817;
-    --accent-milk: #D5F5C6;
+    --bg-card: #141716;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(213, 245, 198, 0.4);
     --text-primary: #F5F5F5;
     --text-secondary: #8E9592;
-    --text-muted: #5A625E;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(213, 245, 198, 0.28);
-
-    /* Mapped standard tokens */
-    --bg: #080909;
-    --surface: #0E1010;
-    --ink: #F5F5F5;
-    --muted: #8E9592;
-    --line: rgba(255, 255, 255, 0.08);
     --accent: #D5F5C6;
     --accent-hover: #c2eeaf;
+    --accent-text: #080909;
+    --badge-bg: rgba(213, 245, 198, 0.12);
+    --badge-border: rgba(213, 245, 198, 0.28);
+  }
 
-    --dark: #080909;
-    --on-dark: #F5F5F5;
-    --on-dark-muted: #8E9592;
-    --dark-line: rgba(255, 255, 255, 0.08);
-    --link-on-dark: #D5F5C6;
+  html.light {
+    --bg-page: #F3F4F5;
+    --bg-surface: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --border-color: #D5DADF;
+    --border-hover: #1D4ED8;
+    --text-primary: #0F1419;
+    --text-secondary: #46505B;
+    --accent: #1D4ED8;
+    --accent-hover: #123499;
+    --accent-text: #FFFFFF;
+    --badge-bg: rgba(29, 78, 216, 0.08);
+    --badge-border: rgba(29, 78, 216, 0.25);
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-void);
+    background-color: var(--bg-page);
     color: var(--text-primary);
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
-    background-color: var(--bg-void);
+    background-color: var(--bg-page);
     color: var(--text-primary);
     overflow-x: hidden;
     min-height: 100vh;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   /* Accessible focus indicators */
@@ -51,19 +56,19 @@
     outline-offset: 2px;
   }
 
-  /* Clean subtle cyber scrollbar */
+  /* Clean subtle scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #080909;
+    background: var(--bg-page);
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(142, 149, 146, 0.3);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(213, 245, 198, 0.35);
+    background: var(--accent);
   }
 }
 
@@ -87,13 +92,14 @@ code, kbd, pre {
   letter-spacing: 0.02em;
 }
 
-/* Cyber card border glow */
-.card-border-glow {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+/* Card styling utilities */
+.theme-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
-.card-border-glow:hover {
-  border-color: rgba(213, 245, 198, 0.35);
-  box-shadow: 0 0 24px rgba(213, 245, 198, 0.06);
+.theme-card:hover {
+  border-color: var(--border-hover);
 }
