@@ -54,8 +54,10 @@ export const FloatingNavbar: React.FC = () => {
     const targetId = href.replace('#', '')
     const el = document.getElementById(targetId)
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const top = el.getBoundingClientRect().top + window.scrollY - 70
+      window.scrollTo({ top, behavior: 'smooth' })
       setActiveSection(targetId)
+      window.history.pushState(null, '', href)
     }
     if (mobileMenuOpen) {
       setMobileMenuOpen(false)

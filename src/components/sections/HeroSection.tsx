@@ -3,6 +3,8 @@ import { ArrowDown, Terminal, ShieldCheck, ExternalLink, ArrowUpRight } from 'lu
 import { GithubIcon, LinkedinIcon } from '../ui/Icons'
 import { HalftoneReveal } from '../ui/HalftoneReveal'
 import { useTheme } from '../../context/useTheme'
+import { BlurText } from '../ui/BlurText'
+import { DecryptedText } from '../ui/DecryptedText'
 
 export const HeroSection: React.FC = () => {
   const { theme } = useTheme()
@@ -19,37 +21,57 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-6 space-y-6">
             {/* At most two chips */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] text-xs font-sans text-[var(--text-secondary)]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] text-xs font-sans text-[var(--text-secondary)] shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
-                <span className="font-medium text-[var(--text-primary)]">B.Tech CSE, Cybersecurity (2nd year)</span>
+                <span className="font-medium text-[var(--text-primary)]">
+                  <DecryptedText text="B.Tech CSE, Cybersecurity (2nd year)" speed={25} maxIterations={8} />
+                </span>
               </div>
 
               <a
                 href="https://tryhackme.com/p/afrazali290"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] hover:border-[var(--accent)] text-xs font-sans text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors group"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-surface)] hover:border-[var(--accent)] text-xs font-sans text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors group shadow-sm"
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-[var(--accent)]" />
-                <span>TryHackMe Top 25%</span>
+                <span>
+                  <DecryptedText text="TryHackMe Top 25%" speed={30} maxIterations={8} />
+                </span>
                 <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100" />
               </a>
             </div>
 
-            {/* Name & Positioning Line */}
+            {/* Name & Positioning Line with DecryptedText and BlurText */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-[var(--text-primary)] tracking-tight leading-tight">
-                Mohamed Afraz Ali
+              <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-[var(--text-primary)] tracking-tight leading-tight cursor-default">
+                <DecryptedText
+                  text="Mohamed Afraz Ali"
+                  animateOn="inViewHover"
+                  effect="scramble"
+                  sequential={true}
+                  revealDirection="start"
+                  speed={28}
+                  maxIterations={10}
+                  scrambleColor="#D5F5C6"
+                  className="text-[var(--text-primary)]"
+                  encryptedClassName="text-[var(--accent)]"
+                />
               </h1>
-              <p className="text-lg sm:text-xl font-display font-semibold text-[var(--accent)] tracking-tight">
-                Cybersecurity Undergraduate | Web Application Security
-              </p>
+              <div className="text-lg sm:text-xl font-display font-semibold text-[var(--accent)] tracking-tight">
+                <BlurText text="Cybersecurity Undergraduate | Web Application Security" delay={0.25} duration={0.5} />
+              </div>
             </div>
 
-            {/* Short, Punchy Summary - No Long Paragraphs */}
-            <p className="text-sm sm:text-base text-[var(--text-secondary)] font-sans leading-relaxed max-w-xl">
-              2nd-year Cybersecurity undergraduate at HITS Chennai. Focused on web application security, manual vulnerability assessment, and reconnaissance automation.
-            </p>
+            {/* Short, Punchy Summary with Subtle BlurText */}
+            <div className="text-sm sm:text-base text-[var(--text-secondary)] font-sans leading-relaxed max-w-xl">
+              <BlurText
+                text="2nd-year Cybersecurity undergraduate at HITS Chennai. Focused on web application security, manual vulnerability assessment, and reconnaissance automation."
+                delay={0.38}
+                duration={0.5}
+                stagger={0.02}
+              />
+            </div>
 
             {/* Primary Action Buttons & Social Redirects */}
             <div className="flex flex-wrap items-center gap-3 pt-2">

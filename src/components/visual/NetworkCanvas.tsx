@@ -57,8 +57,8 @@ export const NetworkCanvas: React.FC<NetworkCanvasProps> = ({
       nodes.push({
         x: Math.random() * cssWidth,
         y: Math.random() * cssHeight,
-        vx: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.4,
-        vy: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.4,
+        vx: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.22,
+        vy: prefersReducedMotion ? 0 : (Math.random() - 0.5) * 0.22,
         radius: Math.random() * 1.5 + 1.2,
         baseAlpha: Math.random() * 0.4 + 0.3,
       })

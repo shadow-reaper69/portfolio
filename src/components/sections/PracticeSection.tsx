@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ExternalLink, Award, Image as ImageIcon, X } from 'lucide-react'
 import { writeupsData } from '../../data/writeups'
+import { ScrollReveal } from '../ui/ScrollReveal'
 
 export const PracticeSection: React.FC = () => {
   const { sectionTitle, intro, portSwigger, tryHackMe } = writeupsData
@@ -15,13 +16,15 @@ export const PracticeSection: React.FC = () => {
   return (
     <section id="practice" className="py-16 border-t border-[var(--border-color)] bg-transparent">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Plain Section Heading */}
-        <h2 className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] tracking-tight mb-2">
-          {sectionTitle}
-        </h2>
-        <p className="text-sm text-[var(--text-secondary)] max-w-2xl font-sans leading-relaxed mb-8">
-          {intro}
-        </p>
+        {/* Section Heading with ScrollReveal */}
+        <ScrollReveal distance={16} duration={0.5}>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] tracking-tight mb-2">
+            {sectionTitle}
+          </h2>
+          <p className="text-sm text-[var(--text-secondary)] max-w-2xl font-sans leading-relaxed mb-8">
+            {intro}
+          </p>
+        </ScrollReveal>
 
         {/* 2-Column Split: PortSwigger Academy & TryHackMe */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

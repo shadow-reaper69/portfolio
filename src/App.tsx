@@ -16,7 +16,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] relative selection:bg-[var(--accent)]/20 selection:text-[var(--accent)] transition-colors duration-200">
-      {/* Dual Blended Ambient Cyber Background */}
+      {/* Dual Blended Ambient Cyber Background (Gradient Bars + Letter Glitch) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* Layer 1: Vertical Gradient Bars shifting in waves */}
         <GradientBars isDark={isDark} barWidth={28} gap={12} speed={0.0018} amplitude={130} />

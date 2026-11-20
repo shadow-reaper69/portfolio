@@ -1,17 +1,22 @@
 import React from 'react'
 import { ExternalLink, Calendar, Award, GraduationCap } from 'lucide-react'
+import { ScrollReveal } from '../ui/ScrollReveal'
+import { DepthGlareCard } from '../ui/DepthGlareCard'
+import { DecryptedText } from '../ui/DecryptedText'
 
 export const EducationSection: React.FC = () => {
   return (
     <section id="education" className="py-16 border-t border-[var(--border-color)] bg-transparent">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] tracking-tight mb-8">
-          Education &amp; Credentials
-        </h2>
+        <ScrollReveal distance={16} duration={0.5}>
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-[var(--text-primary)] tracking-tight mb-8">
+            Education &amp; Credentials
+          </h2>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Academic Background Card */}
-          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-4">
+          <DepthGlareCard maxTilt={3} glareColor="rgba(213, 245, 198, 0.1)" className="p-6 space-y-4">
             <div className="flex items-center gap-2.5 text-xs font-mono font-semibold text-[var(--accent)] uppercase tracking-wider">
               <GraduationCap className="w-4 h-4" />
               <span>Degree Program</span>
@@ -35,10 +40,10 @@ export const EducationSection: React.FC = () => {
               <Calendar className="w-3.5 h-3.5 text-[var(--accent)] shrink-0" />
               <span>Internship Availability: <strong className="text-[var(--text-primary)]">Summer 2027</strong></span>
             </div>
-          </div>
+          </DepthGlareCard>
 
           {/* Certification Card */}
-          <div className="p-6 rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)]/85 backdrop-blur-md shadow-sm space-y-4 flex flex-col justify-between">
+          <DepthGlareCard maxTilt={3} glareColor="rgba(213, 245, 198, 0.1)" className="p-6 space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5 text-xs font-mono font-semibold text-[var(--accent)] uppercase tracking-wider">
@@ -62,7 +67,7 @@ export const EducationSection: React.FC = () => {
 
             <div className="pt-3 border-t border-[var(--border-color)] flex items-center justify-between gap-2">
               <span className="text-[11px] font-mono text-[var(--text-secondary)] bg-[var(--bg-card)] px-2.5 py-1 rounded border border-[var(--border-color)]">
-                ID: C3SA-6ad0ccf6b6d122ea6a91de63
+                <DecryptedText text="ID: C3SA-6ad0ccf6b6d122ea6a91de63" speed={30} maxIterations={8} />
               </span>
               <a
                 href="/certificates/c3sa-certificate.png"
@@ -74,7 +79,7 @@ export const EducationSection: React.FC = () => {
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
-          </div>
+          </DepthGlareCard>
         </div>
       </div>
     </section>
