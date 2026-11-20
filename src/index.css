@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-void: #080909;
+    --bg-surface: #0E1010;
+    --bg-surface-elevated: #151817;
+    --accent-milk: #D5F5C6;
+    --text-primary: #F5F5F5;
+    --text-secondary: #8E9592;
+    --text-muted: #5A625E;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(213, 245, 198, 0.28);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080909;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(213, 245, 198, 0.35);
+  }
+}
+
+.font-display {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Subtle glow utility */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(213, 245, 198, 0.04) 0%, transparent 70%);
+}
+
+.card-border-glow {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-border-glow:hover {
+  border-color: rgba(213, 245, 198, 0.3);
+  box-shadow: 0 0 25px rgba(213, 245, 198, 0.05);
+}
