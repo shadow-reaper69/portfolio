@@ -1,5 +1,5 @@
 import React from 'react'
-import { GraduationCap, MapPin, Calendar, Target, Shield, CheckCircle2 } from 'lucide-react'
+import { GraduationCap, MapPin, Calendar, Target, Shield, CheckCircle2, ExternalLink } from 'lucide-react'
 
 export const AboutSection: React.FC = () => {
   return (
@@ -113,11 +113,20 @@ export const AboutSection: React.FC = () => {
                 CyberWarFare Labs &middot; Hands-on practical cyber defense and analysis curriculum.
               </p>
 
-              {/* Exact required placeholder chip */}
-              <div className="pt-2">
-                <span className="inline-block px-3 py-1.5 rounded-lg border border-dashed border-[#D5DADF] bg-[#F3F4F5] text-xs font-sans text-[#46505B]">
-                  [Certificate URL to be linked]
+              {/* Verified Certificate Link & Credential ID */}
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span className="font-mono text-[11px] text-[#46505B] bg-[#F3F4F5] px-2.5 py-1 rounded border border-[#D5DADF]">
+                  ID: C3SA-6ad0ccf6b6d122ea6a91de63
                 </span>
+                <a
+                  href="/certificates/c3sa-certificate.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#1D4ED8] hover:bg-[#123499] text-white text-xs font-medium transition-colors shadow-2xs"
+                >
+                  <span>View Certificate</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
           </div>
