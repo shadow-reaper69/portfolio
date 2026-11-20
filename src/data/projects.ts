@@ -53,8 +53,8 @@ export const projectsData: Project[] = [
       'Learned subprocess coordination, defensive assessment timing, and structured output parsing in Python.'
     ],
     technologies: ['Python', 'Subfinder', 'httpx', 'Nmap', 'Nuclei', 'Bash', 'VAPT'],
-    repoStatus: 'not-available',
-    statusNote: 'Repository not publicly available'
+    repoUrl: 'https://github.com/shadow-reaper69/recon-orchestrator',
+    repoStatus: 'public'
   },
   {
     id: 'trust-chain',

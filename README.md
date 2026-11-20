@@ -39,14 +39,14 @@ This repository hosts the source code for my personal cybersecurity portfolio. D
   - Learned ESP-IDF embedded development, FreeRTOS task debugging, and firmware state tracking.
 - **Status:** *Tested on owned network*
 
-### 3. [Python Recon Automation](#)
+### 3. [Python Recon Automation](https://github.com/shadow-reaper69/recon-orchestrator)
 - **Stack:** `Python · Security Reconnaissance · VAPT · Subprocess Chaining`
 - **Summary:** A Python CLI orchestration prototype uniting reconnaissance tools into a unified assessment pipeline.
 - **Key Learnings & Architecture:**
   - Automated target reconnaissance by chaining Subfinder, httpx, Nmap, and Nuclei into a coordinated workflow.
   - Standardized and deduplicated multi-tool CLI outputs to streamline initial attack surface scoping.
   - Learned subprocess coordination, defensive assessment timing, and structured output parsing in Python.
-- **Status:** *Repository not publicly available*
+- **Status:** [Public Repository](https://github.com/shadow-reaper69/recon-orchestrator)
 
 ### 4. [Trust Chain](https://github.com/shadow-reaper69/Trust-Chain-Beta)
 - **Stack:** `Next.js · TypeScript · Solidity · Supabase · IPFS · SHA-256`
