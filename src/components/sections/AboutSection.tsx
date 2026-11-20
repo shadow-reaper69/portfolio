@@ -1,5 +1,5 @@
 import React from 'react'
-import { Terminal, Shield, Award, BookOpen, Code2 } from 'lucide-react'
+import { Terminal, Award, BookOpen, Code2 } from 'lucide-react'
 import { portfolioData } from '../../data/portfolioData'
 import { SpotlightCard } from '../ui/SpotlightCard'
 
@@ -29,17 +29,6 @@ export const AboutSection: React.FC = () => {
                 {paragraph}
               </p>
             ))}
-
-            {/* Quote / Principle Banner */}
-            <div className="p-4 rounded-xl border border-white/10 bg-[#0E1010] mt-6 flex items-start gap-3">
-              <Shield className="w-5 h-5 text-[#D5F5C6] shrink-0 mt-0.5" />
-              <div className="text-xs font-mono">
-                <span className="text-[#F5F5F5] font-semibold">Core Operating Rule:</span>
-                <p className="text-[#8E9592] mt-0.5">
-                  "No exaggerated claims. Real lab progress, reproducible scripts, and verified understanding over buzzwords."
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Right Highlights Cards */}
