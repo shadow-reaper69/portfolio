@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F3F4F5"/>
+  <rect x="64" y="64" width="1072" height="502" rx="10" fill="#FFFFFF" stroke="#D5DADF"/>
+  <text x="112" y="260" fill="#0F1419" font-family="Arial, sans-serif" font-size="68" font-weight="700">Mohamed Afraz Ali</text>
+  <text x="116" y="330" fill="#46505B" font-family="Arial, sans-serif" font-size="30">Security-focused developer · Chennai</text>
+  <rect x="116" y="385" width="84" height="6" rx="3" fill="#1D4ED8"/>
+</svg>

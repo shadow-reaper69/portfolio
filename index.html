@@ -1,33 +1,39 @@
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohamed Afraz Ali | Security-Focused Developer & Aspiring Pentester</title>
-    <meta name="description" content="Second-year B.Tech CSE Cybersecurity student developing practical skills in web application security, reconnaissance, penetration testing, and software development." />
+    <meta name="theme-color" content="#F3F4F5" />
     <meta name="author" content="Mohamed Afraz Ali" />
-    <meta name="theme-color" content="#080909" />
-
-    <!-- Open Graph / Meta -->
+    <title>Mohamed Afraz Ali | Security Portfolio</title>
+    <meta name="description" content="Second-year B.Tech Cybersecurity student in Chennai. Web application security labs, recon automation in Python, and Wi-Fi defence tools." />
+    <link rel="canonical" href="https://portfolio-delta-self-32.vercel.app" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-delta-self-32.vercel.app" />
     <meta property="og:title" content="Mohamed Afraz Ali | Security Portfolio" />
-    <meta property="og:description" content="Security-focused developer and aspiring penetration tester with practical focus on web application security and automation." />
-
-    <!-- Pure Typography: Montserrat (Headings / Display) and Poppins (Body / UI) -->
+    <meta property="og:description" content="Security-focused developer · Chennai" />
+    <meta property="og:image" content="https://portfolio-delta-self-32.vercel.app/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mohamed Afraz Ali | Security Portfolio" />
+    <meta name="twitter:description" content="Second-year B.Tech Cybersecurity student in Chennai." />
+    <meta name="twitter:image" content="https://portfolio-delta-self-32.vercel.app/og.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        background-color: #080909;
-        color: #f5f5f5;
-        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#080909] text-[#F5F5F5] antialiased selection:bg-[#D5F5C6]/20 selection:text-[#D5F5C6]">
-    <div id="root"></div>
+  <body>
+    <div id="root">
+      <a class="skip-link" href="#main">Skip to content</a>
+      <header class="site-header"><div class="container header-inner"><a class="brand" href="#top">Mohamed Afraz Ali</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Projects</a><a href="#writeups">Write-ups</a><a href="#contact">Contact</a><a class="resume-link" href="/resume.pdf">Resume</a></nav></div></header>
+      <main id="main">
+        <section class="hero section" id="top"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Chennai, Tamil Nadu · Open to internships, Summer 2027</p><h1>I break lab machines, then write up why they broke.</h1><p class="hero-intro">Second-year B.Tech Cybersecurity student. I practise web application security, and I build my own recon scripts and Wi-Fi defence tools in Python.</p><div class="actions"><a class="button button-primary" href="#work">See projects</a><a class="button button-secondary" href="#writeups">Read write-ups</a></div></div><aside class="profile-card"><dl><div><dt>Studying</dt><dd>B.Tech CSE, Cybersecurity, year 2</dd></div><div><dt>College</dt><dd>Hindustan Institute of Technology &amp; Science</dd></div><div><dt>Focus</dt><dd>Web application security, recon automation, Wi-Fi defence</dd></div><div><dt>Daily tools</dt><dd>Burp Suite, Kali Linux, Python, Bash</dd></div></dl></aside></div></section>
+        <section class="credentials"><div class="container credentials-grid"><article><p class="eyebrow">TryHackMe</p><a class="credential-value" href="https://tryhackme.com/p/afrazali290">Top 25% of users</a></article><article><p class="eyebrow">PortSwigger Web Security Academy</p><p class="credential-value">15 labs completed</p></article><article><p class="eyebrow">C3SA, CyberWarFare Labs</p><p class="credential-value">Completed</p></article></div></section>
+        <section class="section" id="about"><div class="container split-section"><div><p class="eyebrow">About</p><h2>How I got here</h2></div><div class="prose"><p>I have liked taking technology apart and fixing what is broken since I was a child. Security is where that habit turned into something I want to do for a living.</p><p>What keeps me going is the moment a lab machine finally gives way after hours of failed attempts, and then working out and writing down why it worked.</p><p>Most of my time goes into PortSwigger Web Security Academy labs and TryHackMe rooms, using Burp Suite and Kali Linux, and into Python and Bash scripts that automate the repetitive parts of recon.</p></div></div></section>
+        <section class="section" id="work"><div class="container"><div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Projects</h2></div></div><div class="project-grid"><article class="project-card"><p class="eyebrow">Defensive security · Wi-Fi monitoring</p><h3>Cryo WiFi</h3><p>A defensive detector that monitors captured Wi-Fi deauthentication-frame activity and alerts on unusually large bursts. In my observations, ordinary activity involved roughly 1–10 frames, compared with bursts of around 100–200 during deauthentication activity.</p></article><article class="project-card"><p class="eyebrow">Reverse engineering · ESP32-C5 Super Mini</p><h3>ESP32-C5 firmware modification</h3><p>I reverse-engineered an open-source Wi-Fi security tool so it could work across more than one network on my ESP32-C5 Super Mini. Tested only on a network I own.</p></article><article class="project-card"><p class="eyebrow">Python · Attack-surface discovery</p><h3>Python recon automation</h3><p>Coordinates Subfinder, httpx, Nmap, and Nuclei for subdomain discovery, HTTP probing, network and service scanning, and vulnerability checks during authorized assessments.</p></article><article class="project-card"><p class="eyebrow">Next.js · TypeScript · Solidity · Supabase · IPFS</p><h3>Trust Chain</h3><p>A digital credential verification prototype with QR-enabled PDF certificates, SHA-256 document hashing, and certificate verification and revocation workflows. <a href="https://github.com/shadow-reaper69/Trust-Chain-Beta">View repository</a>.</p></article></div></div></section>
+        <section class="writeups-band" id="writeups"><div class="container section"><h2>Write-ups</h2><p>Each write-up covers what the bug was, how I found it and how it is fixed, in my own words.</p><div class="writeup-list"><p>PortSwigger · [TODO: lab name] · [TODO: vulnerability class]</p><p>PortSwigger · [TODO: lab name] · [TODO: vulnerability class]</p><p>TryHackMe · [TODO: room name] · [TODO: vulnerability class]</p></div></div></section>
+      </main>
+      <footer class="contact-footer" id="contact"><div class="container"><div class="contact-heading"><h2>Contact</h2><p>Open to internships for Summer 2027. Based in Chennai, Tamil Nadu.</p></div><dl class="contact-list"><div><dt>Email</dt><dd>afrazali290@gmail.com</dd></div><div><dt>GitHub</dt><dd><a href="https://github.com/shadow-reaper69/">github.com/shadow-reaper69</a></dd></div><div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/afraz-ali-1085a1372/">linkedin.com/in/afraz-ali-1085a1372</a></dd></div><div><dt>TryHackMe</dt><dd><a href="https://tryhackme.com/p/afrazali290">tryhackme.com/p/afrazali290</a></dd></div><div><dt>Resume</dt><dd><a href="/resume.pdf">Open resume PDF</a></dd></div></dl><div class="footer-bottom">© 2026 Mohamed Afraz Ali</div></div></footer>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

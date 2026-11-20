@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# Mohamed Afraz Ali — Security Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A single-page portfolio for my cybersecurity learning, practical projects and web application security work.
 
-Currently, two official plugins are available:
+**Live site:** https://portfolio-delta-self-32.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19 and TypeScript
+- Vite
+- Plain CSS with responsive layout and design tokens
+- Static HTML shell hydrated by React so the main portfolio content is present before JavaScript runs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run locally
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Build and lint
+
+```bash
+npm run build
+npm run lint
+npm run preview
+```
+
+## Screenshot
+
+_Add a current screenshot of the portfolio here._
+
+## Why this design
+
+I wanted the work and evidence to be easier to read than a decorative interface. The page uses a restrained visual system, direct links and visible placeholders wherever project evidence still needs to be added.
