@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Shield, Mail, Check, Copy, ArrowUp, ExternalLink, FileText } from 'lucide-react'
+import { Mail, Check, Copy, ArrowUp, ExternalLink, FileText } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from '../ui/Icons'
 
 export const Footer: React.FC = () => {
@@ -16,36 +16,31 @@ export const Footer: React.FC = () => {
   }
 
   return (
-    <footer id="contact" className="w-full border-t border-white/10 bg-[#080909] pt-16 pb-12 text-[#F5F5F5]">
+    <footer id="contact" className="w-full border-t border-white/10 bg-[#080909] pt-14 pb-12 text-[#F5F5F5]">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           {/* Identity Column (6 cols) */}
-          <div className="md:col-span-6 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-[#D5F5C6]/15 border border-[#D5F5C6]/30 flex items-center justify-center text-[#D5F5C6]">
-                <Shield className="w-4 h-4" />
-              </div>
-              <span className="font-display text-base font-bold text-[#F5F5F5]">
-                Mohamed Afraz Ali
-              </span>
-            </div>
+          <div className="md:col-span-6 space-y-3">
+            <h3 className="font-display text-base font-bold text-[#F5F5F5]">
+              Mohamed Afraz Ali
+            </h3>
 
             <p className="text-sm text-[#8E9592] max-w-md leading-relaxed font-sans">
               Security-focused developer | Aspiring Web Application Pentester. Second-year B.Tech CSE Cybersecurity student at Hindustan Institute of Technology &amp; Science, Chennai.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-[#0E1010] text-xs font-sans text-[#8E9592]">
-              <span className="w-2 h-2 rounded-full bg-[#D5F5C6]" />
-              <span>Available for Summer 2027 Internship Opportunities</span>
-            </div>
+            {/* Availability stated once in footer */}
+            <p className="text-xs text-[#D5F5C6] font-mono">
+              Available for Summer 2027 internships.
+            </p>
           </div>
 
           {/* Quick Navigation (3 cols) */}
-          <div className="md:col-span-3 space-y-3 font-sans">
+          <div className="md:col-span-3 space-y-2.5 font-sans">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D5F5C6] font-mono">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm text-[#8E9592]">
+            <ul className="space-y-1.5 text-sm text-[#8E9592]">
               <li>
                 <a href="#about" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
                   About &amp; Education
@@ -53,12 +48,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#skills" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
-                  Technical Skills
+                  Tooling &amp; Skills
                 </a>
               </li>
               <li>
                 <a href="#projects" className="hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline">
-                  Security Projects
+                  Projects
                 </a>
               </li>
               <li>
@@ -81,11 +76,11 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Connect & Channels (3 cols) */}
-          <div className="md:col-span-3 space-y-3 font-sans">
+          <div className="md:col-span-3 space-y-2.5 font-sans">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D5F5C6] font-mono">
-              Connect Directly
+              Connect
             </h4>
-            <ul className="space-y-2.5 text-sm text-[#8E9592]">
+            <ul className="space-y-2 text-sm text-[#8E9592]">
               <li>
                 <button
                   onClick={copyEmail}
@@ -133,7 +128,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-[#D5F5C6] transition-colors focus-visible:outline-none focus-visible:underline"
                 >
-                  <Shield className="w-4 h-4 shrink-0 text-[#D5F5C6]" />
+                  <span className="font-mono text-xs font-bold text-[#D5F5C6]">THM</span>
                   <span>TryHackMe Profile</span>
                   <ExternalLink className="w-3 h-3 opacity-60" />
                 </a>
@@ -143,7 +138,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#8E9592]">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#8E9592]">
           <p className="m-0">
             &copy; 2026 Mohamed Afraz Ali
           </p>
